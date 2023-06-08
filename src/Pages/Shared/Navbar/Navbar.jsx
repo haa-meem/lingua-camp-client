@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
     const navLists = <>
-        <li className="pe-2">Home</li>
-        <li className="pe-2">Instructors</li>
-        <li className="pe-2">Classes</li>
-        <li>Dashboard</li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/instructors">Instructors</Link></li>
+        <li><Link to="/classes">Classes</Link></li>
+        <li><Link to="/dashboard">Dashboard</Link></li>
     </>
     return (
 <div className="navbar bg-base-100">
