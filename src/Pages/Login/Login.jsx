@@ -1,16 +1,22 @@
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import { FaGoogle } from 'react-icons/fa';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
+import { useState } from 'react';
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleLogin = (data) => {
         console.log(data);
     };
 
     const handleGoogleSignIn = () => {
-        // Implement your Google Sign-in logic here
+
+    };
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
     };
 
     return (
@@ -35,13 +41,22 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input
-                                type="password"
-                                name="password"
-                                placeholder="Password"
-                                className="input input-bordered"
-                                {...register('password', { required: true })}
-                            />
+                            <div className="relative">
+                                <input
+                                    type={showPassword ? 'text' : 'password'}
+                                    name="password"
+                                    placeholder="Password"
+                                    className="input input-bordered pr-10"
+                                    {...register('password', { required: true })}
+                                />
+                                <span
+                                    className={`absolute top-1/2 right-2 transform -translate-y-1/2 ${showPassword ? 'text-primary' : 'text-gray-400'
+                                        } cursor-pointer`}
+                                    onClick={togglePasswordVisibility}
+                                >
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                </span>
+                            </div>
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">
                                     Forgot password?

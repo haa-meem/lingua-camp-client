@@ -1,14 +1,24 @@
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { useForm } from 'react-hook-form';
+import { FaGoogle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm();
 
     const handleRegister = (data) => {
         console.log(data);
     };
 
     const password = watch('password');
+
+    const handleGoogleSignIn = () => {
+
+    };
 
     return (
         <div className="hero min-h-screen bg-base-200 flex items-center justify-center">
@@ -51,9 +61,16 @@ const Register = () => {
                                 name="password"
                                 placeholder="Password"
                                 className="input input-bordered"
-                                {...register('password', { required: true })}
+                                {...register('password', {
+                                    required: true,
+                                    minLength: 6,
+                                    pattern: {
+                                        value: /^(?=.*[A-Z])(?=.*[!@#$%^&*()]).*$/,
+                                        message: 'Password must contain at least 6 characters, one capital letter, and one special character',
+                                    },
+                                })}
                             />
-                            {errors.password && <span className="text-error">Password is required</span>}
+                            {errors.password && <span className="text-error">{errors.password.message}</span>}
                         </div>
                         <div className="form-control mb-6">
                             <label className="label">
@@ -66,7 +83,7 @@ const Register = () => {
                                 className="input input-bordered"
                                 {...register('confirmPassword', {
                                     required: true,
-                                    validate: (value) => value === password || 'Passwords do not match'
+                                    validate: (value) => value === password || 'Passwords do not match',
                                 })}
                             />
                             {errors.confirmPassword && <span className="text-error">{errors.confirmPassword.message}</span>}
@@ -92,6 +109,10 @@ const Register = () => {
                         <div className="form-control mt-6">
                             <button type="submit" className="btn btn-primary w-full">
                                 Register
+                            </button>
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline btn-warning mt-3">
+                                <FaGoogle className="me-1" />
+                                Google Sign-in
                             </button>
                         </div>
                     </form>
