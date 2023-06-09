@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Instructor 1",
+        "image": "https://i.ibb.co/2tLknWX/person1.png",
+        "teaching": "Teaching Spanish"
+    },
+    {
+        "id": 2,
+        "name": "Instructor 2",
+        "image": "https://i.ibb.co/R2BkjQQ/person2.png",
+        "teaching": "Teaching French"
+    },
+    {
+        "id": 3,
+        "name": "Instructor 3",
+        "image": "https://i.ibb.co/JQRvkWy/person3.png",
+        "teaching": "Teaching German"
+    },
+    {
+        "id": 4,
+        "name": "Instructor 4",
+        "image": "https://i.ibb.co/V9mQdyD/person4.png",
+        "teaching": "Teaching Chinese"
+    },
+    {
+        "id": 5,
+        "name": "Instructor 5",
+        "image": "https://i.ibb.co/m5Zx81V/person5.png",
+        "teaching": "Teaching Arabic"
+    },
+    {
+        "id": 6,
+        "name": "Instructor 6",
+        "image": "https://i.ibb.co/Zz91r5r/person6.png",
+        "teaching": "Teaching Polish"
+    }
+]

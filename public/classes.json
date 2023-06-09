@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Spanish Language Class",
+        "image": "https://i.ibb.co/wYrvrQJ/pic1.jpg",
+        "description": "This class focuses on teaching students the fundamentals of the Spanish language through interactive activities, conversations, and cultural exploration."
+    },
+    {
+        "id": 2,
+        "title": "French Language Class",
+        "image": "https://i.ibb.co/HTShRTW/pic2.jpg",
+        "description": "In this class, students will immerse themselves in the beauty of the French language. They will learn vocabulary, grammar, and pronunciation while exploring French culture and traditions."
+    },
+    {
+        "id": 3,
+        "title": "German Language Class",
+        "image": "https://i.ibb.co/nw1bhqZ/pic3.jpg",
+        "description": "Join our German Language Class to dive into the intricacies of the German language. Students will develop their speaking, reading, and writing skills while engaging in fun and engaging activities."
+    },
+    {
+        "id": 4,
+        "title": "Chinese Language Class",
+        "image": "https://i.ibb.co/Gk3Sb3V/pic4.jpg",
+        "description": "Discover the wonders of the Chinese language and its rich cultural heritage. This class will introduce students to Chinese characters, basic conversational skills, and traditional customs."
+    },
+    {
+        "id": 5,
+        "title": "Arabic Language Class",
+        "image": "https://i.ibb.co/LCxdtc6/pic5.jpg",
+        "description": "Immerse yourself in the beauty and complexity of the Arabic language. This class will cover Arabic grammar, vocabulary, and script, as well as provide insights into Arab culture and traditions."
+    },
+    {
+        "id": 6,
+        "title": "Polish Language Class",
+        "image": "https://i.ibb.co/sWFxXTr/pic6.jpg",
+        "description": "Explore the fascinating world of the Polish language and its rich cultural heritage. This class will teach students Polish grammar, vocabulary, pronunciation, and provide an introduction to Polish customs and traditions."
+    }
+]
