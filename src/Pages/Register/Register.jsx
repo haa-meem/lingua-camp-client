@@ -1,6 +1,8 @@
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Register = () => {
     const {
@@ -10,8 +12,15 @@ const Register = () => {
         formState: { errors },
     } = useForm();
 
+    const { createUser } = useContext(AuthContext);
+
     const handleRegister = (data) => {
         console.log(data);
+        createUser(data.email, data.password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
     };
 
     const password = watch('password');

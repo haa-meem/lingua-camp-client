@@ -1,15 +1,32 @@
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
     const [showPassword, setShowPassword] = useState(false);
 
-    const handleLogin = (data) => {
-        console.log(data);
-    };
+    const {signIn}=useContext(AuthContext);
+
+    const handleLogin = event => {
+        event.preventDefault();
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     const handleGoogleSignIn = () => {
 
