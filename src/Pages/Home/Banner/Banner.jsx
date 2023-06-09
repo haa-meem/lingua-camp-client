@@ -8,7 +8,7 @@ import banner4 from '../../../assets/banner4.jpg';
 
 const Banner = () => {
   return (
-    <div className='w-11/12 mx-auto mb-12'>
+    <div className='w-[97%] mx-auto mb-12'>
       <AwesomeSlider animation="cubeAnimation">
         <div data-src={banner1} />
         <div data-src={banner2} />

@@ -1,0 +1,16 @@
+.dark {
+    background-color: #202020;
+    color: #ffffff;
+}
+
+.light {
+    background-color: #ffffff;
+    color: #202020;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    z-index: 999;
+}
