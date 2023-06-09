@@ -14,7 +14,7 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructors">Instructors</Link></li>
         <li><Link to="/classes">Classes</Link></li>
-        {/* <li><Link to="/dashboard">Dashboard</Link></li> */}
+        <li><Link to="/hidden">Dashboard</Link></li>
     </>
     return (
         <div className="navbar"> {/* fixed z-10 bg-opacity-10 bg-black */}
@@ -37,9 +37,9 @@ const Navbar = () => {
             <div className="navbar-end">
                 {user && (
                     <div className="relative flex items-center">
-                        <ul className="menu menu-horizontal px-1">
+                        {/* <ul className="menu menu-horizontal px-1">
                             <li><Link to="/dashboard">Dashboard</Link></li>
-                        </ul>
+                        </ul> */}
                         <button
                             type="button"
                             className="tooltip tooltip-bottom hover:tooltip-open"
