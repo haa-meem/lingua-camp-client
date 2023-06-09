@@ -1,17 +1,21 @@
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../Firebase/firebase.config';
 
 const Login = () => {
-    const { register, handleSubmit } = useForm();
+    const { register } = useForm();
     const [showPassword, setShowPassword] = useState(false);
 
-    const {signIn}=useContext(AuthContext);
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event => {
-        event.preventDefault();
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -22,15 +26,28 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error);
             })
     }
 
-    const handleGoogleSignIn = () => {
+    // Google Login
+    const auth = getAuth(app);
+    const googleProvider = new GoogleAuthProvider();
 
-    };
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.log('error', error.message)
+            })
+    }
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -41,7 +58,7 @@ const Login = () => {
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div className="card-body p-8">
                     <h1 className="text-3xl font-bold text-center mb-3">Login</h1>
-                    <form onSubmit={handleSubmit(handleLogin)}>
+                    <form onSubmit={handleLogin}>
                         <div className="form-control mb-3">
                             <label className="label">
                                 <span className="label-text">Email</span>

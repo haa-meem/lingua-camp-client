@@ -1,11 +1,20 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .error(error => console.log(error.message));
+    }
+
     const navLists = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructors">Instructors</Link></li>
         <li><Link to="/classes">Classes</Link></li>
-        <li><Link to="/dashboard">Dashboard</Link></li>
+        {/* <li><Link to="/dashboard">Dashboard</Link></li> */}
     </>
     return (
         <div className="navbar"> {/* fixed z-10 bg-opacity-10 bg-black */}
@@ -26,7 +35,32 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login' className="btn">Login</Link>
+                {user && (
+                    <div className="relative flex items-center">
+                        <ul className="menu menu-horizontal px-1">
+                            <li><Link to="/dashboard">Dashboard</Link></li>
+                        </ul>
+                        <button
+                            type="button"
+                            className="tooltip tooltip-bottom hover:tooltip-open"
+                            data-tip={user.displayName}
+                        >
+                            <img src={user?.photoURL} alt={user.displayName} className="rounded me-2 h-12 w-12" />
+                        </button>
+                    </div>
+                )}
+                {user ? (
+                    <button
+                        onClick={handleLogOut}
+                        className="btn btn-warning"
+                    >
+                        Logout
+                    </button>
+                ) : (
+                    <Link to="/login" className="btn btn-secondary">
+                        Login
+                    </Link>
+                )}
             </div>
         </div>
     );
