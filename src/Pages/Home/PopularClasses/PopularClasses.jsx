@@ -12,7 +12,7 @@ const PopularClasses = () => {
     return (
         <>
             <h1 className="text-center font-bold text-5xl my-3">Popular Classes</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-3 text-[#1F2937]">
                 {classes.map((classItem) => (
                     <div className="card w-full bg-base-100 shadow-xl" key={classItem.id}>
                         <figure className="px-10 pt-10">

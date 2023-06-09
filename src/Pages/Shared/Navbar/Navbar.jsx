@@ -8,7 +8,7 @@ const Navbar = () => {
         <li><Link to="/dashboard">Dashboard</Link></li>
     </>
     return (
-<div className="navbar fixed z-10 bg-opacity-10 bg-black">
+        <div className="navbar"> {/* fixed z-10 bg-opacity-10 bg-black */}
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

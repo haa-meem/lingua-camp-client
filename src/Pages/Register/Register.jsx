@@ -22,11 +22,11 @@ const Register = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200 flex items-center justify-center">
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100" style={{ marginTop: '70px' }}>
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-3">
                 <div className="card-body p-8">
-                    <h1 className="text-3xl font-bold text-center mb-8">Register</h1>
+                    <h1 className="text-3xl font-bold text-center mb-3">Register</h1>
                     <form onSubmit={handleSubmit(handleRegister)}>
-                        <div className="form-control mb-6">
+                        <div className="form-control mb-2">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
@@ -39,7 +39,7 @@ const Register = () => {
                             />
                             {errors.name && <span className="text-error">Name is required</span>}
                         </div>
-                        <div className="form-control mb-6">
+                        <div className="form-control mb-2">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
@@ -52,7 +52,7 @@ const Register = () => {
                             />
                             {errors.email && <span className="text-error">Email is required</span>}
                         </div>
-                        <div className="form-control mb-6">
+                        <div className="form-control mb-2">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
@@ -72,7 +72,7 @@ const Register = () => {
                             />
                             {errors.password && <span className="text-error">{errors.password.message}</span>}
                         </div>
-                        <div className="form-control mb-6">
+                        <div className="form-control mb-2">
                             <label className="label">
                                 <span className="label-text">Confirm Password</span>
                             </label>
@@ -88,7 +88,7 @@ const Register = () => {
                             />
                             {errors.confirmPassword && <span className="text-error">{errors.confirmPassword.message}</span>}
                         </div>
-                        <div className="form-control mb-6">
+                        <div className="form-control mb-2">
                             <label className="label">
                                 <span className="label-text">Photo URL</span>
                             </label>
@@ -106,7 +106,7 @@ const Register = () => {
                                 </a>
                             </label>
                         </div>
-                        <div className="form-control mt-6">
+                        <div className="form-control mt-2">
                             <button type="submit" className="btn btn-primary w-full">
                                 Register
                             </button>
@@ -116,7 +116,7 @@ const Register = () => {
                             </button>
                         </div>
                     </form>
-                    <p className="mt-4 text-center">
+                    <p className="mt-2 text-center">
                         Already have an Account? <Link className="text-blue-500" to="/login">Login</Link>
                     </p>
                 </div>

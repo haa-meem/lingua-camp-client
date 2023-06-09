@@ -23,9 +23,9 @@ const Login = () => {
         <div className="hero min-h-screen bg-base-200 flex items-center justify-center">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div className="card-body p-8">
-                    <h1 className="text-3xl font-bold text-center mb-5">Login</h1>
+                    <h1 className="text-3xl font-bold text-center mb-3">Login</h1>
                     <form onSubmit={handleSubmit(handleLogin)}>
-                        <div className="form-control mb-6">
+                        <div className="form-control mb-3">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
@@ -37,7 +37,7 @@ const Login = () => {
                                 {...register('email', { required: true })}
                             />
                         </div>
-                        <div className="form-control mb-6">
+                        <div className="form-control mb-3">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
@@ -63,7 +63,7 @@ const Login = () => {
                                 </a>
                             </label>
                         </div>
-                        <div className="form-control mt-6">
+                        <div className="form-control mt-3">
                             <button type="submit" className="btn btn-primary w-full">
                                 Login
                             </button>
@@ -73,7 +73,7 @@ const Login = () => {
                             </button>
                         </div>
                     </form>
-                    <p className="mt-4 text-center">
+                    <p className="mt-3 text-center">
                         Don`t have an Account? <Link className="text-blue-500" to="/register">Register</Link>
                     </p>
                 </div>
