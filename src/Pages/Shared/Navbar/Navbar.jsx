@@ -18,7 +18,7 @@ const Navbar = () => {
                         {navLists}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Lingua Camp</a>
+                <Link to='/' className="btn btn-ghost normal-case text-xl">Lingua Camp</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -26,7 +26,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Login</a>
+                <Link to='/login' className="btn">Login</Link>
             </div>
         </div>
     );
