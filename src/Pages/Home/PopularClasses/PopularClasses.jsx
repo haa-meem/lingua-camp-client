@@ -64,11 +64,11 @@ const PopularClasses = () => {
 
                 <div className="card w-full bg-base-100 shadow-xl">
                     <figure className="px-3 pt-3">
-                        <img src={pic5} alt="Japanese Language Class" className="rounded-xl" />
+                        <img src={pic5} alt="Arabic Language Class" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Japanese Language Class</h2>
-                        <p>Immerse yourself in the captivating world of Japanese language and culture. Students will learn the fundamentals of Japanese, including hiragana, katakana, kanji, and essential phrases.</p>
+                        <h2 className="card-title">Arabic Language Class</h2>
+                        <p>Immerse yourself in the captivating world of the Arabic language and culture. Students will learn Arabic alphabet, basic vocabulary, and essential phrases.</p>
                         <div className="card-actions">
                             <button className="btn btn-primary">Learn More</button>
                         </div>
@@ -77,11 +77,11 @@ const PopularClasses = () => {
 
                 <div className="card w-full bg-base-100 shadow-xl">
                     <figure className="px-3 pt-3">
-                        <img src={pic6} alt="Italian Language Class" className="rounded-xl" />
+                        <img src={pic6} alt="Polish Language Class" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
-                        <h2 className="card-title">Italian Language Class</h2>
-                        <p>Embark on a linguistic and culinary journey through Italy. This class will teach students the basics of Italian grammar, vocabulary, and pronunciation, while also exploring the delightful flavors of Italian cuisine.</p>
+                        <h2 className="card-title">Polish Language Class</h2>
+                        <p>Embark on a linguistic and cultural journey through Poland. This class will teach students the basics of Polish grammar, vocabulary, and pronunciation, while also exploring Polish traditions and customs.</p>
                         <div className="card-actions">
                             <button className="btn btn-primary">Learn More</button>
                         </div>
