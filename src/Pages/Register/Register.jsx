@@ -12,7 +12,7 @@ const Register = () => {
         formState: { errors },
     } = useForm();
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser,updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -23,7 +23,12 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                navigate(from, { replace: true });
+                updateUserProfile(data.name, data.photoURL)
+                .then(() => {
+                    console.log('user profile info updated')
+                    navigate(from, { replace: true });
+                })
+                .catch(error=>console.log(error))
             })
     };
 
@@ -107,12 +112,12 @@ const Register = () => {
                             </label>
                             <input
                                 type="text"
-                                name="photo"
+                                name="photoURL"
                                 placeholder="Photo URL"
                                 className="input input-bordered"
-                                {...register('photo', { required: true })}
+                                {...register('photoURL', { required: true })}
                             />
-                            {errors.photo && <span className="text-error">Photo URL is required</span>}
+                            {errors.photoURL && <span className="text-error">Photo URL is required</span>}
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">
                                     Forgot password?
