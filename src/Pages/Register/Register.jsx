@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../Firebase/firebase.config';
 
 const Register = () => {
     const {
@@ -25,7 +27,7 @@ const Register = () => {
                 console.log(loggedUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        const saveUser = {name: data.name, email: data.email}
+                        const saveUser = { name: data.name, email: data.email }
                         fetch('http://localhost:5000/users', {
                             method: 'POST',
                             headers: {
@@ -46,9 +48,32 @@ const Register = () => {
 
     const password = watch('password');
 
-    const handleGoogleSignIn = () => {
+    // Google Login
+    const auth = getAuth(app);
+    const googleProvider = new GoogleAuthProvider();
 
-    };
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, googleProvider)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                const saveUser = { name: loggedUser.displayName, email: loggedUser.email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true });
+                    })
+            })
+            .catch(error => {
+                console.log('error', error.message)
+            })
+    }
 
     return (
         <div className="hero min-h-screen bg-base-200 flex items-center justify-center">
