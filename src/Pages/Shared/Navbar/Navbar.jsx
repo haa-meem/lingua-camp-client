@@ -5,7 +5,7 @@ import useEnroll from "../../../Hooks/useEnroll";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    const [enrolled] = useEnroll();
+    const [enroll] = useEnroll();
 
     const handleLogOut = () => {
         logOut()
@@ -16,10 +16,10 @@ const Navbar = () => {
     const navLists = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructors">Instructors</Link></li>
-        <li><Link to="/classes">
+        <li><Link to="/dashboard/myselectedclasses">
             <button className="btn">
                 Classes
-                <div className="badge badge-secondary">+{enrolled?.length || 0}</div>
+                <div className="badge badge-secondary">+{enroll?.length || 0}</div>
             </button>
         </Link></li>
         <li><Link to="/hidden">Dashboard</Link></li>
