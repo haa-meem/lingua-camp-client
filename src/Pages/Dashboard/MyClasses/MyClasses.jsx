@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const MyClasses = () => {
     const [enroll,refetch] = useEnroll();
-    const total = enroll.reduce((sum, item) => item.price + sum, 0);
+    const total = enroll.reduce((sum, item) => item.classPrice + sum, 0);
 
     const handleDelete = item => {
         Swal.fire({
@@ -74,7 +74,7 @@ const MyClasses = () => {
                                 <td>
                                     {item.classTitle}
                                 </td>
-                                <td>${item.price}</td>
+                                <td>${item.classPrice}</td>
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600 text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>

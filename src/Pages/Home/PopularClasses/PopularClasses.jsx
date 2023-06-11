@@ -8,7 +8,7 @@ const PopularClasses = () => {
     const [classes, setClasses] = useState([]);
     // const {_id,title,image,description}=classItem;
     const { user } = useContext(AuthContext);
-    const[,refetch]=useEnroll();
+    const [, refetch] = useEnroll();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -21,7 +21,7 @@ const PopularClasses = () => {
     const handleAddToClasses = classItem => {
         console.log(classItem);
         if (user && user.email) {
-            const enrolledClass = { classId: classItem._id, classTitle: classItem.title, classImage: classItem.image, classDescription: classItem.description, email: user.email }
+            const enrolledClass = { classId: classItem._id, classTitle: classItem.title, classImage: classItem.image, classDescription: classItem.description, classAvailable: classItem.availableSeats, classPrice: classItem.price, email: user.email }
             fetch('http://localhost:5000/enrolled', {
                 method: 'POST',
                 headers: {
@@ -71,6 +71,8 @@ const PopularClasses = () => {
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">{classItem.title}</h2>
                             <p>{classItem.description}</p>
+                            <p className="font-semibold">Available Seats: <span className='text-green-600'>{classItem.availableSeats}</span></p>
+                            <p className="font-semibold">Course Price: <span className='text-orange-400'>${classItem.price}</span></p>
                             <div className="card-actions">
                                 <button onClick={() => handleAddToClasses(classItem)} className="btn btn-outline bg-slate-100 border-0 border-b-4 border-orange-400 mt-3">Enroll Here</button>
                             </div>
