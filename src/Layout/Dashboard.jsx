@@ -1,11 +1,13 @@
 import { FaHome, FaShoppingCart, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useEnroll from "../Hooks/useEnroll";
+import useAdmin from "../Hooks/useAdmin";
 
 const Dashboard = () => {
     const [enroll] = useEnroll();
 
-    const isAdmin = true;
+    //const isAdmin = true;
+    const [isAdmin] = useAdmin();
 
     return (
         <div className="drawer lg:drawer-open">
