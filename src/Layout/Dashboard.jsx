@@ -28,8 +28,11 @@ const Dashboard = () => {
                             </li>
                         </> : <>
                             <li><NavLink to="/dashboard/home"><FaHome></FaHome> User Home</NavLink></li>
-                            <li><NavLink to="/dashboard/myselectedclasses"><FaShoppingCart></FaShoppingCart> My Classes
+                            <li><NavLink to="/dashboard/myselectedclasses"><FaShoppingCart></FaShoppingCart> My Selected Classes
                                 <span className="badge badge-secondary">+{enroll?.length || 0}</span>
+                            </NavLink>
+                            </li>
+                            <li><NavLink to="/dashboard/myenrolledclasses"><FaShoppingCart></FaShoppingCart> My Enrolled Classes
                             </NavLink>
                             </li>
                         </>

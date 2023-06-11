@@ -13,6 +13,7 @@ import Dashboard from "../Layout/Dashboard";
 import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses/MySelectedClasses";
 import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import MyEnrolledClasses from "../Pages/Dashboard/MyEnrolledClasses/MyEnrolledClasses";
 
 export const router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
             {
                 path:'myselectedclasses',
                 element:<MySelectedClasses></MySelectedClasses>
+            },
+            {
+                path:'myenrolledclasses',
+                element:<MyEnrolledClasses></MyEnrolledClasses>
             },
             {
                 path:'payment',
