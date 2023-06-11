@@ -4,12 +4,13 @@ import { AuthContext } from '../Providers/AuthProvider';
 import useAxiosSecure from './useAxiosSecure';
 
 const useEnroll = () => {
-    const { user } = useContext(AuthContext);
-    const token = localStorage.getItem('access-token');
+    const { user, loading } = useContext(AuthContext);
+    //const token = localStorage.getItem('access-token');
     const [axiosSecure] = useAxiosSecure();
     const { refetch, data: enroll = [] } = useQuery({
         queryKey: ['enrolled', user?.email],
-        enabled: !!user?.email && !!token,
+        // enabled: !!user?.email && !!token,
+        enabled:!loading,
         queryFn: async () => {
             const res = await axiosSecure(`/enrolled?email=${user?.email}`)
             console.log('res from axios', res);
