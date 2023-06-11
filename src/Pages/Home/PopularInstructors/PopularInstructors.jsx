@@ -22,7 +22,7 @@ const PopularInstructors = () => {
               <h2 className="card-title">{instructor.name}</h2>
               <p>{instructor.teaching}</p>
               <div className="card-actions">
-                <button className="btn btn-primary">Learn More</button>
+                <button className="btn btn-outline">View Details</button>
               </div>
             </div>
           </div>

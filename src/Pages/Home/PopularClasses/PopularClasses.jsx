@@ -21,13 +21,13 @@ const PopularClasses = () => {
     const handleAddToClasses = classItem => {
         console.log(classItem);
         if (user && user.email) {
-            const enrolledClass = { classId: classItem._id, classTitle: classItem.title, classImage: classItem.image, classDescription: classItem.description, classAvailable: classItem.availableSeats, classPrice: classItem.price, email: user.email }
-            fetch('http://localhost:5000/enrolled', {
+            const selectedClasses = { classId: classItem._id, classTitle: classItem.title, classImage: classItem.image, classDescription: classItem.description, classAvailable: classItem.availableSeats, classPrice: classItem.price, email: user.email }
+            fetch('http://localhost:5000/selectedClasses', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify(enrolledClass)
+                body: JSON.stringify(selectedClasses)
             })
                 .then(res => res.json())
                 .then(data => {

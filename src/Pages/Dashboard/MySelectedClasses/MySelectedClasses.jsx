@@ -1,9 +1,10 @@
 import { FaTrashAlt } from "react-icons/fa";
 import useEnroll from "../../../Hooks/useEnroll";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
-const MyClasses = () => {
-    const [enroll,refetch] = useEnroll();
+const MySelectedClasses = () => {
+    const [enroll, refetch] = useEnroll();
     const total = enroll.reduce((sum, item) => item.classPrice + sum, 0);
 
     const handleDelete = item => {
@@ -17,7 +18,7 @@ const MyClasses = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/enrolled/${item._id}`, {
+                fetch(`http://localhost:5000/selectedClasses/${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -40,7 +41,9 @@ const MyClasses = () => {
             <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
                 <h3 className="text-3xl">My Selected Classes: {enroll.length}</h3>
                 <h3 className="text-3xl">Total Price: ${total}</h3>
-                <button className="btn btn-warning btn-sm">PAY</button>
+                <Link to="/dashboard/payment">
+                    <button className="btn btn-warning btn-sm">PAY</button>
+                </Link>
             </div>
             <div className="overflow-x-auto">
                 <table className="table">
@@ -88,4 +91,4 @@ const MyClasses = () => {
     );
 };
 
-export default MyClasses;
+export default MySelectedClasses;
