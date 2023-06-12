@@ -17,7 +17,7 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructors">Instructors</Link></li>
         <li><Link to="/hidden">Classes</Link></li>
-        <li><Link to="/dashboard/myselectedclasses">
+        <li><Link to="/dashboard">
             Dashboard
             <span className="badge badge-secondary">+{enroll?.length || 0}</span>
         </Link></li>

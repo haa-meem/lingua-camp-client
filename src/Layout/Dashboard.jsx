@@ -1,4 +1,4 @@
-import { FaHistory, FaHome, FaShoppingCart, FaUsers } from "react-icons/fa";
+import { FaHistory, FaHome, FaShoppingCart, FaUsers, FaWallet } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useEnroll from "../Hooks/useEnroll";
 import useAdmin from "../Hooks/useAdmin";
@@ -18,7 +18,6 @@ const Dashboard = () => {
             <div className="drawer-content flex flex-col items-center justify-center">
                 <Outlet></Outlet>
                 <label htmlFor="my-drawer-2" className="btn btn-primary btn-outline drawer-button lg:hidden">Open drawer</label>
-
             </div>
             <div className="drawer-side bg-[#D1A054]">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
@@ -29,6 +28,11 @@ const Dashboard = () => {
                                 <li>
                                     <NavLink to="/dashboard/home">
                                         <FaHome /> Admin Home
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/dashboard/manageclasses">
+                                        <SiGoogleclassroom /> Manage Classes
                                     </NavLink>
                                 </li>
                                 <li>
@@ -46,7 +50,12 @@ const Dashboard = () => {
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/addaclass">
-                                        <SiGoogleclassroom/> Add a Class
+                                        <SiGoogleclassroom /> Add a Class
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/dashboard/myclasses">
+                                        <FaUsers /> My Classes
                                     </NavLink>
                                 </li>
                             </>
@@ -65,7 +74,7 @@ const Dashboard = () => {
                                 </li>
                                 <li>
                                     <NavLink to="/dashboard/myenrolledclasses">
-                                        <FaShoppingCart /> My Enrolled Classes
+                                        <FaWallet /> My Enrolled Classes
                                     </NavLink>
                                 </li>
                                 <li>
