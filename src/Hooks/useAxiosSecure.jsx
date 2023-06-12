@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://lingua-camp-server.vercel.app',
 });
 
 const useAxiosSecure = () => {

@@ -4,7 +4,7 @@ const MyClasses = () => {
     const [classData, setClassData] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/addClass')
+        fetch('https://lingua-camp-server.vercel.app/addClass')
             .then(response => response.json())
             .then(data => setClassData(data))
             .catch(error => console.log(error));

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const PaymentHistory = () => {
     const [history, setHistory] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/payments')
+        fetch('https://lingua-camp-server.vercel.app/payments')
             .then(res => res.json())
             .then(data => {
                 const sortedPayments = data.sort((a, b) => new Date(b.date) - new Date(a.date));

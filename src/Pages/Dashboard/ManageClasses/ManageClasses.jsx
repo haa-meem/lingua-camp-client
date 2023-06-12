@@ -17,7 +17,7 @@ const ManageClasses = () => {
     };
 
     const sendFeedback = (classId, status) => {
-        fetch(`http://localhost:5000/addClass/${classId}`, {
+        fetch(`https://lingua-camp-server.vercel.app/addClass/${classId}`, {
             method: "PATCH",
             headers: {
                 "content-Type": "application/json",
@@ -48,7 +48,7 @@ const ManageClasses = () => {
     };
 
     const fetchClasses = () => {
-        fetch("http://localhost:5000/addClass")
+        fetch("https://lingua-camp-server.vercel.app/addClass")
             .then((res) => res.json())
             .then((data) => setClasses(data))
             .catch((error) => console.error(error));

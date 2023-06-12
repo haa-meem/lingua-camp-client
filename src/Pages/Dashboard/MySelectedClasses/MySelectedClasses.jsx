@@ -18,7 +18,7 @@ const MySelectedClasses = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/selectedClasses/${item._id}`, {
+                fetch(`https://lingua-camp-server.vercel.app/selectedClasses/${item._id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

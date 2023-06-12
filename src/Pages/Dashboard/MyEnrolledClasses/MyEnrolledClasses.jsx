@@ -4,7 +4,7 @@ const MyEnrolledClasses = () => {
   const [enrolled, setEnrolled] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/payments')
+    fetch('https://lingua-camp-server.vercel.app/payments')
       .then(res => res.json())
       .then(data => setEnrolled(data))
   }, [])

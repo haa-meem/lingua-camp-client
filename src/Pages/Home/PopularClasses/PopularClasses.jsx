@@ -13,7 +13,7 @@ const PopularClasses = () => {
     const location = useLocation();
 
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('https://lingua-camp-server.vercel.app/classes')
             .then((res) => res.json())
             .then((data) => setClasses(data));
     }, []);
@@ -22,7 +22,7 @@ const PopularClasses = () => {
         console.log(classItem);
         if (user && user.email) {
             const selectedClasses = { classId: classItem._id, classTitle: classItem.title, classImage: classItem.image, classDescription: classItem.description, classAvailable: classItem.availableSeats, classPrice: classItem.price, email: user.email }
-            fetch('http://localhost:5000/selectedClasses', {
+            fetch('https://lingua-camp-server.vercel.app/selectedClasses', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
