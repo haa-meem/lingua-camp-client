@@ -16,8 +16,8 @@ const Navbar = () => {
     const navLists = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/instructors">Instructors</Link></li>
-        <li><Link to="/hidden">Classes</Link></li>
-        <li><Link to="/dashboard">
+        <li><Link to="/classes">Classes</Link></li>
+        <li><Link to="/dashboard/home">
             Dashboard
             <span className="badge badge-secondary">+{enroll?.length || 0}</span>
         </Link></li>

@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import PopularClasses from '../PopularClasses/PopularClasses';
 import PopularInstructors from '../PopularInstructors/PopularInstructors';
 import './Home.css';
+import WeProvide from '../WeProvide/WeProvide';
 
 const Home = () => {
     const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -20,6 +21,7 @@ const Home = () => {
             </button>
             <PopularClasses></PopularClasses>
             <PopularInstructors></PopularInstructors>
+            <WeProvide></WeProvide>
         </div>
     );
 };

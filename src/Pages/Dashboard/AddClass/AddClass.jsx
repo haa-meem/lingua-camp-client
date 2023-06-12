@@ -50,7 +50,7 @@ const AddClass = () => {
     };
 
     return (
-        <div className="bg-[#8b393f] p-24 w-[80%]">
+        <div className="bg-[#8b393f] p-24 w-full">
             <h2 className="text-3xl font-extrabold text-center text-white">Add a Class</h2>
             <form onSubmit={handleAddClass}>
                 <div className="mb-8">

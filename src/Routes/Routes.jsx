@@ -8,7 +8,6 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Instructors from "../Pages/Instructors/Instructors";
 import PrivateRoute from "./PrivateRoute";
-import Hidden from "../Pages/Hidden/Hidden";
 import Dashboard from "../Layout/Dashboard";
 import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses/MySelectedClasses";
 import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
@@ -18,6 +17,8 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
+import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
+import Classes from "../Pages/Classes/Classes";
 
 export const router = createBrowserRouter([
     {
@@ -41,8 +42,8 @@ export const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: 'hidden',
-                element: <PrivateRoute><Hidden></Hidden></PrivateRoute>
+                path: 'classes',
+                element: <Classes></Classes>
             }
         ]
     },
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
         path: 'dashboard',
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
+            {
+                path: 'home',
+                element: <DashboardHome></DashboardHome>
+            },
             {
                 path: 'myselectedclasses',
                 element: <MySelectedClasses></MySelectedClasses>
