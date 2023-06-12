@@ -1,4 +1,4 @@
-import { FaHome, FaShoppingCart, FaUsers } from "react-icons/fa";
+import { FaHistory, FaHome, FaShoppingCart, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useEnroll from "../Hooks/useEnroll";
 import useAdmin from "../Hooks/useAdmin";
@@ -14,7 +14,7 @@ const Dashboard = () => {
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center">
                 <Outlet></Outlet>
-                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                <label htmlFor="my-drawer-2" className="btn btn-primary btn-outline drawer-button lg:hidden">Open drawer</label>
 
             </div>
             <div className="drawer-side bg-[#D1A054]">
@@ -33,6 +33,9 @@ const Dashboard = () => {
                             </NavLink>
                             </li>
                             <li><NavLink to="/dashboard/myenrolledclasses"><FaShoppingCart></FaShoppingCart> My Enrolled Classes
+                            </NavLink>
+                            </li>
+                            <li><NavLink to="/dashboard/paymenthistory"><FaHistory></FaHistory> Payment History
                             </NavLink>
                             </li>
                         </>

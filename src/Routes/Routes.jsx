@@ -14,53 +14,58 @@ import MySelectedClasses from "../Pages/Dashboard/MySelectedClasses/MySelectedCl
 import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import MyEnrolledClasses from "../Pages/Dashboard/MyEnrolledClasses/MyEnrolledClasses";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <Main></Main>,
-        children:[
+        children: [
             {
-                path:'/',
-                element:<Home></Home>
+                path: '/',
+                element: <Home></Home>
             },
             {
-                path:'instructors',
-                element:<Instructors></Instructors>
+                path: 'instructors',
+                element: <Instructors></Instructors>
             },
             {
-                path:'login',
-                element:<Login></Login>
+                path: 'login',
+                element: <Login></Login>
             },
             {
-                path:'register',
-                element:<Register></Register>
+                path: 'register',
+                element: <Register></Register>
             },
             {
-                path:'hidden',
-                element:<PrivateRoute><Hidden></Hidden></PrivateRoute>
+                path: 'hidden',
+                element: <PrivateRoute><Hidden></Hidden></PrivateRoute>
             }
         ]
     },
     {
-        path:'dashboard',
-        element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
-        children:[
+        path: 'dashboard',
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
             {
-                path:'myselectedclasses',
-                element:<MySelectedClasses></MySelectedClasses>
+                path: 'myselectedclasses',
+                element: <MySelectedClasses></MySelectedClasses>
             },
             {
-                path:'myenrolledclasses',
-                element:<MyEnrolledClasses></MyEnrolledClasses>
+                path: 'myenrolledclasses',
+                element: <MyEnrolledClasses></MyEnrolledClasses>
             },
             {
-                path:'payment',
-                element:<Payment></Payment>
+                path: 'payment',
+                element: <Payment></Payment>
             },
             {
-                path:'users',
-                element:<ManageUsers></ManageUsers>
+                path: 'users',
+                element: <ManageUsers></ManageUsers>
+            },
+            {
+                path: 'paymenthistory',
+                element: <PaymentHistory></PaymentHistory>
             }
         ]
     },
